@@ -2,10 +2,10 @@ package com.kodilla.patterns.singleton;
 
 //klasa do odczytu i zapisu ustawień aplikacji z pliku
 public final class SettingsFileEngine {
-    private static SettingsFileEngine settingsFileEngineInstance = null;
+    private static SettingsFileEngine settingsFileEngineInstance = null; //dodajemy statyczne pole
     private String fileName = "";
 
-    private SettingsFileEngine() {
+    private SettingsFileEngine() { //robimy prywatny konstruktor
     }
 
     public static SettingsFileEngine getInstance() {
