@@ -102,7 +102,8 @@ public final class Board extends Prototype {
         return s;
     }
 
-    public Board shallowCopy() throws CloneNotSupportedException {
+    public Board shallowCopy() throws
+            CloneNotSupportedException {
         return (Board)super.clone();
     }
 
