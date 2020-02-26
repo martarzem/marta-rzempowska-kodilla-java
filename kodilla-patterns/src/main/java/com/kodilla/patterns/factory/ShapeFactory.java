@@ -3,7 +3,7 @@ package com.kodilla.patterns.factory;
 public final class ShapeFactory {
     public static final String CIRCLE = "CIRCLE"; //definiujemy stałe, których będziemy używać
     public static final String SQUARE = "SQUARE"; //żeby uniknąć literówek
-    public static final String RECTANGLE = "RECTANGLE";
+    public static final String RECTANGLE = "RECTANGLE"; //FINAL konieczne do utworzenia stałej
 
     public final Shape makeShape(final String shapeClass) { //sprawdza, którą ze stałych użyto...
         switch (shapeClass) {
