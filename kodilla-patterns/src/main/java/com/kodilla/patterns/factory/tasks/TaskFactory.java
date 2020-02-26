@@ -8,8 +8,7 @@ public class TaskFactory {
     public Task makeTask (String taskClass) {
         switch (taskClass) {
             case SHOPPINGTASK:
-                return new ShoppingTask("Christmas gift", "Cinema's tickets",
-                        2);
+                return new ShoppingTask("Christmas gift", "Cinema's tickets", 2);
             case PAINTINGTASK:
                 return new PaintingTask("Picture", "Brown and white", "Cow");
             case DRIVINGTASK:
