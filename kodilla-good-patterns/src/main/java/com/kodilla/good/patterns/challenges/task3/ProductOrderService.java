@@ -7,14 +7,13 @@ public class ProductOrderService {
     private OrderRepository orderRepository;
 
     public ProductOrderService(final InformationService informationService,
-                               final OrderService orderService,
                                final OrderRepository orderRepository) {
         this.informationService = informationService;
-        this.orderService = orderService;
         this.orderRepository = orderRepository;
     }
 
-    public OrderDto process(final OrderRequest orderRequest) {
+    public OrderDto process(final OrderRequest orderRequest) throws Exception {
+        orderService = OrderServiceFactory.getOrderService(orderRequest.getOrderServiceName());
         boolean isOrdered = orderService.order(orderRequest.getUser(), orderRequest.getOrder(), orderRequest.getTime());
 
         if (isOrdered) {

@@ -39,8 +39,15 @@ public class LibraryTestSuite {
         shallowClonedLibrary.getBooks().stream()
                 .forEach(x -> System.out.println(x));
         System.out.println(deepClonedLibrary.getName());
-        deepClonedLibrary.getBooks().stream()
-                .forEach(x -> System.out.println(x));
+        deepClonedLibrary.getBooks()
+                .forEach(System.out::println);
+
+        Book b = new Book("Title" + 0, "Author" + 0,
+                LocalDate.of(2000 + 0, 1 + 0, 10 + 0));
+        System.out.println(library.getBooks().size());
+        library.getBooks().remove(b);
+        System.out.println(library.getBooks().size());
+
 
         Assert.assertEquals(5, library.getBooks().size());
         Assert.assertEquals(5, shallowClonedLibrary.getBooks().size());

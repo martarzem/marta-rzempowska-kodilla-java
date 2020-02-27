@@ -10,7 +10,7 @@ public class OrderRequestRetriever {
         Order orderExtraShop = new Order("Egg", 1,10);
         LocalDate timeExtraShop = LocalDate.now();
 
-        return new OrderRequest(userExtraShop, orderExtraShop, timeExtraShop);
+        return new OrderRequest(userExtraShop, orderExtraShop, timeExtraShop, OrderServiceFactory.EXTRAFOODSHOP);
     }
 
     public OrderRequest retrieveHealthyShop() {
@@ -19,7 +19,7 @@ public class OrderRequestRetriever {
         Order orderHealthyShop = new Order("Butter", 10,3);
         LocalDate timeHealthyShop = LocalDate.now();
 
-        return new OrderRequest(userHealthyShop, orderHealthyShop, timeHealthyShop);
+        return new OrderRequest(userHealthyShop, orderHealthyShop, timeHealthyShop, OrderServiceFactory.HEALTHYSHOP);
     }
 
     public OrderRequest retrieveGlutenShop() {
@@ -28,6 +28,6 @@ public class OrderRequestRetriever {
         Order orderGlutenShop = new Order("Bread", 15,2);
         LocalDate timeGlutenShop = LocalDate.now();
 
-        return new OrderRequest(userGlutenShop, orderGlutenShop, timeGlutenShop);
+        return new OrderRequest(userGlutenShop, orderGlutenShop, timeGlutenShop, OrderServiceFactory.GLUTENFREESHOP);
     }
 }
