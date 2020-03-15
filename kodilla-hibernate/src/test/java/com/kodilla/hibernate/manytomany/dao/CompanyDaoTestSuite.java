@@ -9,11 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CompanyDaoTestSuite {
     @Autowired
-    CompanyDao companyDao;
+    private CompanyDao companyDao;
+    @Autowired
+    private EmployeeDao employeeDao;
 
     @Test
     public void testSaveManyToMany(){
@@ -59,12 +63,62 @@ public class CompanyDaoTestSuite {
         //sprzątanie po teście opatrzone frazą try-catch w razie, gdyby test nie wykonał się
         //poprawnie i w bazie pozostałyby fragmentaryczne dane, przez co program mógłby napotkać
         //na błąd przy próbie usunięcia nieistniejących danych
-        //try {
-        //    companyDao.deleteById(softwareMachineId);
-        //    companyDao.deleteById(dataMaestersId);
-        //    companyDao.deleteById(greyMatterId);
-        //} catch (Exception e) {
-        //    //do nothing
-        //}
+        try {
+            companyDao.deleteById(softwareMachineId);
+            companyDao.deleteById(dataMaestersId);
+            companyDao.deleteById(greyMatterId);
+        } catch (Exception e) {
+            //do nothing
+        }
+    }
+
+    @Test
+    public void testNamedQueries() {
+        //Given
+        Employee johnSmith = new Employee("John", "Smith");
+        Employee peterSmith = new Employee("Peter", "Smith");
+        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
+
+        Company dateSoftwareMachine = new Company("DataSoftware Machine");
+        Company dataMaesters = new Company("Data Maesters");
+        Company dataGreyMatter = new Company("DataGrey Matter");
+
+        dateSoftwareMachine.getEmployees().add(johnSmith);
+        dateSoftwareMachine.getEmployees().add(peterSmith);
+        dataMaesters.getEmployees().add(stephanieClarckson);
+        dataMaesters.getEmployees().add(lindaKovalsky);
+        dataGreyMatter.getEmployees().add(johnSmith);
+        dataGreyMatter.getEmployees().add(lindaKovalsky);
+
+        johnSmith.getCompanies().add(dateSoftwareMachine);
+        peterSmith.getCompanies().add(dataGreyMatter);
+        stephanieClarckson.getCompanies().add(dataMaesters);
+        lindaKovalsky.getCompanies().add(dataMaesters);
+        lindaKovalsky.getCompanies().add(dataGreyMatter);
+
+        companyDao.save(dateSoftwareMachine);
+        int softwareMachineId = dateSoftwareMachine.getId();
+        companyDao.save(dataMaesters);
+        int dataMaestersId = dataMaesters.getId();
+        companyDao.save(dataGreyMatter);
+        int greyMatterId = dataGreyMatter.getId();
+
+        //When
+        List<Employee> listEmployee = employeeDao.retrieveEmployeesWithLastname("Smith");
+        List<Company> listCompany = companyDao.retrieveCompanyStartedWithLetters("Dat");
+
+        //Then
+        Assert.assertEquals(2, listEmployee.size());
+        Assert.assertEquals(3, listCompany.size());
+
+        //CleanUp
+        try {
+            companyDao.deleteById(softwareMachineId);
+            companyDao.deleteById(dataMaestersId);
+            companyDao.deleteById(greyMatterId);
+        } catch (Exception e) {
+            //do nothing
+        }
     }
 }

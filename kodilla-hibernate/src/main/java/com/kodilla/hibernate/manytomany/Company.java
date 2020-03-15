@@ -1,9 +1,16 @@
 package com.kodilla.hibernate.manytomany;
 
+import com.kodilla.hibernate.task.Task;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+
+@NamedQuery(
+        name = "Company.retrieveCompanyStartedWithLetters",
+        query = "FROM Company WHERE SUBSTRING(name, 1, 3) LIKE :LETTERS"
+)
 
 @Entity
 @Table(name = "COMPANIES")
