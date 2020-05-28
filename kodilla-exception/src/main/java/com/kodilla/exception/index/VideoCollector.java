@@ -5,9 +5,9 @@ import java.util.List;
 
 public class VideoCollector {
 
-        public List<String> getCollection() {
-            ArrayList<String> videos = new ArrayList<>();
-            videos.add("Extra Movie");
-            return videos;
-        }
+    public List<String> getCollection() {
+        ArrayList<String> videos = new ArrayList<>();
+        videos.add("Extra Movie");
+        return videos;
+    }
 }

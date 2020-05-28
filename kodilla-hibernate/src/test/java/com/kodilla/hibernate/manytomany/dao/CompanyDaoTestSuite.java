@@ -20,7 +20,7 @@ public class CompanyDaoTestSuite {
     private EmployeeDao employeeDao;
 
     @Test
-    public void testSaveManyToMany(){
+    public void testSaveManyToMany() {
         //Given
         //tworzymy 3 pracowników
         Employee johnSmith = new Employee("John", "Smith");

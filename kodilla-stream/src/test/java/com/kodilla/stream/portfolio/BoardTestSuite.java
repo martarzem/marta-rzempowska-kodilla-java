@@ -174,14 +174,14 @@ public class BoardTestSuite {
                 .filter(inProgressTasks::contains)
                 .flatMap(task -> task.getTasks().stream())
                 .map(date -> ChronoUnit.DAYS.between(date.getCreated(), LocalDate.now()))
-                .reduce(0L, (sum,current) -> sum = sum + current); //mamy typ Long z wyższej linijki, dlatego
+                .reduce(0L, (sum, current) -> sum = sum + current); //mamy typ Long z wyższej linijki, dlatego
         //inicjalizacyjna liczba musi być też typu long (0L)
         long tasks = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(task -> task.getTasks().stream())
                 .count();
 
-        double result = days/tasks;
+        double result = days / tasks;
 
         Assert.assertEquals(10.0, result, 0.01);
     }

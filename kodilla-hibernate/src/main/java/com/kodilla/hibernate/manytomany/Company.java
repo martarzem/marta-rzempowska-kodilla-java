@@ -7,9 +7,15 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedQuery(
-        name = "Company.retrieveCompanyStartedWithLetters",
-        query = "FROM Company WHERE SUBSTRING(name, 1, 3) LIKE :LETTERS"
+@NamedQueries({
+        @NamedQuery(
+                name = "Company.retrieveCompanyStartedWithLetters",
+                query = "FROM Company WHERE SUBSTRING(name, 1, 3) LIKE :LETTERS"
+        ),
+        @NamedQuery(
+                name = "Company.retrieveCompanyContainingLetters",
+                query = "FROM Company WHERE name LIKE :LETTERS"
+        )}
 )
 
 @Entity

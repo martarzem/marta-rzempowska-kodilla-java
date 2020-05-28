@@ -14,7 +14,7 @@ public class ArrayOperationsTestSuite {
 
     @Test
     public void testGetAverage() {
-        int[] numbers = {2,3,4,6,2,5,3,6,4,6};
+        int[] numbers = {2, 3, 4, 6, 2, 5, 3, 6, 4, 6};
         double result = ArrayOperations.getAverage(numbers);
 
         Assert.assertEquals(4.1, result, 0);

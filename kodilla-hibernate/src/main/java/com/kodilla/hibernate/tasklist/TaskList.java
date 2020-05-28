@@ -41,7 +41,7 @@ public class TaskList {
         return description;
     }
 
-    @OneToMany (
+    @OneToMany(
             targetEntity = Task.class,
             mappedBy = "taskList",
             cascade = CascadeType.ALL,

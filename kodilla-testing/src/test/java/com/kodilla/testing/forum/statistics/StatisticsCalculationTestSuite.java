@@ -32,7 +32,7 @@ public class StatisticsCalculationTestSuite {
     public void testPostsNumberEqualsZero() {
         Statistics statisticsMock = mock(Statistics.class);
         List<String> usersList = new ArrayList<>();
-        for (int i=0; i<10; i++) {
+        for (int i = 0; i < 10; i++) {
             usersList.add("user" + i);
         }
         when(statisticsMock.usersNames()).thenReturn(usersList);
@@ -51,7 +51,7 @@ public class StatisticsCalculationTestSuite {
     public void testPostsNumberEqualsThousand() {
         Statistics statisticsMock = mock(Statistics.class);
         List<String> usersList = new ArrayList<>();
-        for (int i=0; i<10; i++) {
+        for (int i = 0; i < 10; i++) {
             usersList.add("user" + i);
         }
         when(statisticsMock.usersNames()).thenReturn(usersList);
@@ -70,7 +70,7 @@ public class StatisticsCalculationTestSuite {
     public void testCommentsNumberEqualsZero() {
         Statistics statisticsMock = mock(Statistics.class);
         List<String> usersList = new ArrayList<>();
-        for (int i=0; i<10; i++) {
+        for (int i = 0; i < 10; i++) {
             usersList.add("user" + i);
         }
         when(statisticsMock.usersNames()).thenReturn(usersList);
@@ -89,7 +89,7 @@ public class StatisticsCalculationTestSuite {
     public void testMorePostsThanComments() {
         Statistics statisticsMock = mock(Statistics.class);
         List<String> usersList = new ArrayList<>();
-        for (int i=0; i<10; i++) {
+        for (int i = 0; i < 10; i++) {
             usersList.add("user" + i);
         }
         when(statisticsMock.usersNames()).thenReturn(usersList);
@@ -108,7 +108,7 @@ public class StatisticsCalculationTestSuite {
     public void testMoreCommentsThanPosts() {
         Statistics statisticsMock = mock(Statistics.class);
         List<String> usersList = new ArrayList<>();
-        for (int i=0; i<10; i++) {
+        for (int i = 0; i < 10; i++) {
             usersList.add("user" + i);
         }
         when(statisticsMock.usersNames()).thenReturn(usersList);
@@ -144,7 +144,7 @@ public class StatisticsCalculationTestSuite {
     public void testUsersNumberEqualsHundred() {
         Statistics statisticsMock = mock(Statistics.class);
         List<String> usersList = new ArrayList<>();
-        for (int i=0; i<100; i++) {
+        for (int i = 0; i < 100; i++) {
             usersList.add("user" + i);
         }
         when(statisticsMock.usersNames()).thenReturn(usersList);

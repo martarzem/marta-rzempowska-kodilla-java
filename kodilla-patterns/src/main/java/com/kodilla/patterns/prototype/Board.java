@@ -96,7 +96,7 @@ public final class Board extends Prototype {
     @Override
     public String toString() {
         String s = "Board [" + name + "]\n";
-        for(TasksList list : lists) {
+        for (TasksList list : lists) {
             s = s + list.toString() + "\n";
         }
         return s;
@@ -104,18 +104,18 @@ public final class Board extends Prototype {
 
     public Board shallowCopy() throws
             CloneNotSupportedException {
-        return (Board)super.clone();
+        return (Board) super.clone();
     }
 
     //po wykonaniu płytkiego klonowania, w pętlach dla każdej listy i każdego obiektu
     // dla każdego zadania tworzony jest nowy obiekt typu Task, a dla listy - typu TasksList
     //klonowana jest całą struktura
     public Board deepCopy() throws CloneNotSupportedException {
-        Board clonedBoard = (Board)super.clone();
+        Board clonedBoard = (Board) super.clone();
         clonedBoard.lists = new HashSet<>();
-        for(TasksList theList : lists) {
+        for (TasksList theList : lists) {
             TasksList clonedList = new TasksList(theList.getName());
-            for(Task task : theList.getTasks()) {
+            for (Task task : theList.getTasks()) {
                 clonedList.getTasks().add(task);
             }
             clonedBoard.getLists().add(clonedList);

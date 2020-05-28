@@ -18,7 +18,7 @@ public class SandStorageTestSuite {
 
         //When
         BigDecimal totalSand = BigDecimal.ZERO;
-        for(SandStorage continent : continents){
+        for (SandStorage continent : continents) {
             totalSand = totalSand.add(continent.getSandBeansQuantity());
         }
 
@@ -40,8 +40,8 @@ public class SandStorageTestSuite {
                 .map(SandStorage::getSandBeansQuantity) //zamiana obiektów reprezentujących kontynenty na liczby typu
                 // BigDecimal będące ilością ziarenek piasku
                 .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current)); //wartość początkowa kolektora skalarnego
-                // to zero,  dla każdej liczby w kolekcji wykonuje wyrażenie lambda; końcowa suma jest zwracana do
-                // zmiennej totalSand
+        // to zero,  dla każdej liczby w kolekcji wykonuje wyrażenie lambda; końcowa suma jest zwracana do
+        // zmiennej totalSand
 
         //Then
         BigDecimal expectedSand = new BigDecimal("211111110903703703670");

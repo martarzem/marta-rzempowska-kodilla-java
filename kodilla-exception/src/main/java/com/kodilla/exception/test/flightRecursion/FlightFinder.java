@@ -20,6 +20,7 @@ public class FlightFinder {
             }
         } else {
             throw new RouteNotFoundException();
-        } return false;
+        }
+        return false;
     }
 }

@@ -19,7 +19,7 @@ public class MessageSender {
 
     // rzucamy utworzonym wyjątkiem
     public void sendMessageTo(User user, String message) throws MessageNotSentException {
-        if(user != null) {
+        if (user != null) {
             System.out.println("Sending message: " + message + " to: " + user.getName());
         } else {
             throw new MessageNotSentException("Object User was null");

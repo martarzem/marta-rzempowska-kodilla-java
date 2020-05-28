@@ -2,7 +2,7 @@ package com.kodilla.good.patterns.challenges.task3;
 
 public class Application {
 
-    public static void main (String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
         //ExtraFoodShop
         OrderRequestRetriever orderRetrieverExtra = new OrderRequestRetriever();

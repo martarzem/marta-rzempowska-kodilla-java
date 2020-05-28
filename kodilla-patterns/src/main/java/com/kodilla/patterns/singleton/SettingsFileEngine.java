@@ -16,7 +16,7 @@ public final class SettingsFileEngine {
          */
         //uniknięcie problemu z wielowątkowością
         if (settingsFileEngineInstance == null) {
-            synchronized(SettingsFileEngine.class) {
+            synchronized (SettingsFileEngine.class) {
                 if (settingsFileEngineInstance == null) { //podwójne sprawdzenie, czy obiekt nie istnieje
                     settingsFileEngineInstance = new SettingsFileEngine();
                 }

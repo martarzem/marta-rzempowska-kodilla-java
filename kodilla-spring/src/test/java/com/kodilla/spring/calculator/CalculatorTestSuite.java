@@ -19,9 +19,9 @@ public class CalculatorTestSuite {
                 new AnnotationConfigApplicationContext("com.kodilla.spring");
         Calculator calculator = context.getBean(Calculator.class);
 
-        double result = calculator.add(10,10);
+        double result = calculator.add(10, 10);
 
-        Assert.assertEquals(20, result,0);
+        Assert.assertEquals(20, result, 0);
 
     }
 
@@ -32,9 +32,9 @@ public class CalculatorTestSuite {
                 new AnnotationConfigApplicationContext("com.kodilla.spring");
         Calculator calculator = context.getBean(Calculator.class);
 
-        double result = calculator.sub(10,10);
+        double result = calculator.sub(10, 10);
 
-        Assert.assertEquals(0, result,0);
+        Assert.assertEquals(0, result, 0);
 
     }
 
@@ -45,9 +45,9 @@ public class CalculatorTestSuite {
                 new AnnotationConfigApplicationContext("com.kodilla.spring");
         Calculator calculator = context.getBean(Calculator.class);
 
-        double result = calculator.mul(10,10);
+        double result = calculator.mul(10, 10);
 
-        Assert.assertEquals(100, result,0);
+        Assert.assertEquals(100, result, 0);
 
     }
 
@@ -58,9 +58,9 @@ public class CalculatorTestSuite {
                 new AnnotationConfigApplicationContext("com.kodilla.spring");
         Calculator calculator = context.getBean(Calculator.class);
 
-        double result = calculator.div(10,10);
+        double result = calculator.div(10, 10);
 
-        Assert.assertEquals(1, result,0);
+        Assert.assertEquals(1, result, 0);
     }
 
     @Test
@@ -71,13 +71,11 @@ public class CalculatorTestSuite {
                     new AnnotationConfigApplicationContext("com.kodilla.spring");
             Calculator calculator = context.getBean(Calculator.class);
 
-            double result = calculator.div(10,0);
+            double result = calculator.div(10, 0);
 
-        } catch (ArithmeticException e){
+        } catch (ArithmeticException e) {
             Assert.assertEquals("You can't divide by zero.", e.getMessage());
         }
-
-
 
 
     }

@@ -17,12 +17,12 @@ public class StreamMain {
         Forum forum = new Forum();
 
         Map<Integer, ForumUser> par = forum.getUserList().stream()
-                .filter(forumUser -> forumUser.getSex()=='M')
-                .filter(forumUser -> Period.between(forumUser.getBirthDate(), LocalDate.now()).getYears()>=20)
+                .filter(forumUser -> forumUser.getSex() == 'M')
+                .filter(forumUser -> Period.between(forumUser.getBirthDate(), LocalDate.now()).getYears() >= 20)
                 //period.between(data startowa, data końcowa(bliższa dzisiejszemu dniu);
                 // metoda zwraca różnicę lat, miesięcy i dni między podanymi datami
                 // przy zwykłym odejmowaniu dat otrzymujemy porównanie tylko roku (bez dokładności co do dnia)
-                .filter(forumUser -> forumUser.getPostsPublicated()>=1)
+                .filter(forumUser -> forumUser.getPostsPublicated() >= 1)
                 .collect(Collectors.toMap(ForumUser::getUserID, forumUser -> forumUser));
 
         par.entrySet().stream()

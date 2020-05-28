@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Scope;
 public class ReaderConfig {
     @Autowired //pole wiązane automatycznie
     @Qualifier("book1") //wskazanie beana, bo są dwa
-    Book book;
+            Book book;
 
     @Bean
     public Reader getReader() {

@@ -19,7 +19,7 @@ public class IndexExceptionRunner {
          */
 
         //aby się ustrzec przed błedem można skorzystać z metody size()
-        if(collection.size() > 2) {
+        if (collection.size() > 2) {
             String movie = collection.get(0);
             System.out.println(movie);
 

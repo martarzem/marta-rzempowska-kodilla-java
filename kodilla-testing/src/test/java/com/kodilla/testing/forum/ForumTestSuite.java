@@ -8,20 +8,24 @@ public class ForumTestSuite {
     public void befor() {
         System.out.println("Test Case: begin");
     }
+
     @After
-    public void after(){
+    public void after() {
         System.out.println("Test Case: end");
     }
+
     @BeforeClass
-    public static void beforClass(){
+    public static void beforClass() {
         System.out.println("Test Suit: begin");
     }
+
     @AfterClass
-    public static void afterClass(){
+    public static void afterClass() {
         System.out.println("Test Suit: end");
     }
+
     @Test
-    public void testCaseUsername(){
+    public void testCaseUsername() {
         //Given
         SimpleUser simpleUser = new SimpleUser("theForumUser", "John Doe");
         //When
@@ -30,8 +34,9 @@ public class ForumTestSuite {
         //Then
         Assert.assertEquals("theForumUser", result);
     }
+
     @Test
-    public void testCaseRealName(){
+    public void testCaseRealName() {
         //Given
         SimpleUser simpleUser = new SimpleUser("theForumUser", "John Doe");
         //When

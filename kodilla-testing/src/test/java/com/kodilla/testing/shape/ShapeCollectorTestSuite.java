@@ -91,9 +91,9 @@ public class ShapeCollectorTestSuite {
         ShapeCollector shapeCollector = new ShapeCollector();
         double squareField = shapeCollector.getShapeField(new Square("square", 3));
 
-        double squareFieldExpected = 3*3;
+        double squareFieldExpected = 3 * 3;
 
-        Assert.assertEquals(squareFieldExpected, squareField,0);
+        Assert.assertEquals(squareFieldExpected, squareField, 0);
     }
 
     @Test
@@ -101,9 +101,9 @@ public class ShapeCollectorTestSuite {
         ShapeCollector shapeCollector = new ShapeCollector();
         double triangleField = shapeCollector.getShapeField(new Triangle("triangle", 2, 4));
 
-        double triangleFieldExpected = 0.5*2*4;
+        double triangleFieldExpected = 0.5 * 2 * 4;
 
-        Assert.assertEquals(triangleFieldExpected,triangleField,0);
+        Assert.assertEquals(triangleFieldExpected, triangleField, 0);
     }
 
     @Test
@@ -111,8 +111,8 @@ public class ShapeCollectorTestSuite {
         ShapeCollector shapeCollector = new ShapeCollector();
         double circleField = shapeCollector.getShapeField(new Circle("circle", 5));
 
-        double circleFieldExpected = 5*5*Math.PI;
+        double circleFieldExpected = 5 * 5 * Math.PI;
 
-        Assert.assertEquals(circleFieldExpected, circleField,0);
+        Assert.assertEquals(circleFieldExpected, circleField, 0);
     }
 }

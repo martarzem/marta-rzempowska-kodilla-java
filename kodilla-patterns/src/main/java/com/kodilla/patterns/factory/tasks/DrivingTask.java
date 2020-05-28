@@ -1,6 +1,6 @@
 package com.kodilla.patterns.factory.tasks;
 
-public class DrivingTask implements Task{
+public class DrivingTask implements Task {
     private String taskName;
     private String where;
     private String using;

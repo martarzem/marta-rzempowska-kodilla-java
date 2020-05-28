@@ -5,12 +5,12 @@ import java.util.List;
 
 public class OddNumbersExterminator {
 
-    public List<Integer> exterminate (List<Integer> numbers) {
+    public List<Integer> exterminate(List<Integer> numbers) {
         List<Integer> oddNumbers = new ArrayList<>();
         if (!numbers.isEmpty()) {
             List<Integer> copyNumbers = new ArrayList<>(numbers);
             for (Integer number : copyNumbers) {
-                if (number%2 == 0) {
+                if (number % 2 == 0) {
                     oddNumbers.add(number);
                 }
             }
