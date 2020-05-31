@@ -4,12 +4,14 @@ import com.kodilla.patterns2.facade.ShopService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
+@EnableAspectJAutoProxy
 @Service //klasa sama jest też beanem - może być wstrzykiwana przez SpringBoota do podłączonych aplikacji
-public final class OrderFacade {
+public class OrderFacade {
     @Autowired
     private ShopService shopService; //korzysta z beana klasy ShopService
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderFacade.class); //tworzy logger w oparciu o bibliotekę slf4j
