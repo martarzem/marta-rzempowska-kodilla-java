@@ -1,6 +1,7 @@
 package com.kodilla.hibernate.manytomany.facade;
 
 import com.kodilla.hibernate.manytomany.Company;
+import com.kodilla.hibernate.manytomany.Employee;
 import com.kodilla.hibernate.manytomany.dao.CompanyDao;
 import com.kodilla.hibernate.manytomany.dao.EmployeeDao;
 import org.slf4j.Logger;
@@ -32,12 +33,15 @@ public class FindingFacade {
         return companies;
     }
 
-//    public void findingEmployee(final String letters) throws FindingProcessException {
-//        String arg = "%" + letters + "%";
-//        try {
-//            employeeDao.retrieveEmployeeContainingLetters(arg);
-//        } catch (Exception e) {
-//            LOGGER.info(FindingProcessException.CANNOT_FIND_EMPLOYEE);
-//        }
-//    }
+    public List<Employee> findingEmployee(final String letters) throws FindingProcessException {
+        String arg = "%" + letters + "%";
+        LOGGER.info("Searching process has been started.");
+        List<Employee> employees = employeeDao.retrieveEmployeeContainingLetters(arg);
+        if (employees.size() <= 0) {
+            LOGGER.error("Error!");
+            throw new FindingProcessException(FindingProcessException.CANNOT_FIND_COMPANY);
+        }
+        LOGGER.info("Results of searching process: " + employees);
+        return employees;
+    }
 }

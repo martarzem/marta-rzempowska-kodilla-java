@@ -3,7 +3,6 @@ package com.kodilla.hibernate.manytomany.facade;
 import com.kodilla.hibernate.manytomany.Company;
 import com.kodilla.hibernate.manytomany.Employee;
 import com.kodilla.hibernate.manytomany.dao.CompanyDao;
-import com.kodilla.hibernate.manytomany.dao.EmployeeDao;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +18,7 @@ public class FindingFacadeTest {
     private CompanyDao companyDao;
 
     @Autowired
-    private EmployeeDao employeeDao;
-
-    private FindingFacade findingFacade = new FindingFacade();
+    private FindingFacade findingFacade;
 
     @Before
     public void beforeTests() {
@@ -62,16 +59,11 @@ public class FindingFacadeTest {
         Assert.assertEquals(2, companies.size());
     }
 
-//    @Test
-//    public void shouldFindEmployee() {
-//        try {
-//            List<Employee> employees = findingFacade.findingEmployee("lin");
-//        } catch (FindingProcessException e) {
-//
-//        }
-//
-//        Assert.assertEquals(1, employees.size());
-//
-//    }
+    @Test
+    public void shouldFindEmployee() throws FindingProcessException {
+        List<Employee> employees = findingFacade.findingEmployee("mit");
+
+        Assert.assertEquals(1, employees.size());
+    }
 
 }
