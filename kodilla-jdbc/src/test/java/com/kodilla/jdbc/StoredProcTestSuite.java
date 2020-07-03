@@ -39,7 +39,7 @@ public class StoredProcTestSuite {
         statement.executeUpdate(sqlUpdate);
 
         //When
-        String sqlProcedureCall = "CALL UPDATEBESTSELLERS('2020-06-07')";
+        String sqlProcedureCall = "CALL UPDATEBESTSELLERS()";
         statement.execute(sqlProcedureCall);
 
         //Then
